@@ -114,7 +114,9 @@ function Clear() {
 	arrFilesDev2 = [];
 	isDone1 = isDone2 = isDone3 = false;
 	console.log("Clear complete");
-	
+	for (var str in arrMenu) {
+		arrMenu[str] = arrMenu[str].replace(/\[+.*\]/g, "[]");
+	}
 	MainStart();
 }
 
@@ -135,8 +137,8 @@ function ShowDiff() {
 			}
 		}
 
-		console.log("newFiles: ", newFiles);
-		console.log("delFiles: ", delFiles);
+		console.log("New files: ", newFiles);
+		console.log("Deleted files: ", delFiles);
 
 		MainStart();
 
